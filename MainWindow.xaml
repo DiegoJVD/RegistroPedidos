@@ -1,0 +1,23 @@
+﻿<Window x:Class="RegistroPedidos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroPedidos"
+        mc:Ignorable="d"
+        Title="Registro de pedidos" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <!--Menu Registro-->
+            <Menu Height="20" >
+                <!--Submenu-->
+                <MenuItem Header="Registrar">
+                    <MenuItem x:Name = "rOrdenesMenuItem" Header="Registrar Ordenes"  Click="rOrdenesMenuItem_CLick"/>  
+                </MenuItem>
+                <MenuItem Header="Consultar">
+                    <MenuItem x:Name = "cOrdenesMenuItem" Header="Consultar Ordenes"  Click="cOrdenesMenuItem_CLick"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+    </Grid>
+</Window>
