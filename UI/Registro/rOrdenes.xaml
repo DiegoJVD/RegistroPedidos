@@ -52,7 +52,7 @@
                             <TextBox x:Name="CostoTextBox" Height="25"  Width="45" Text="{Binding Detalle.Costo}"/>
                         </StackPanel>
                         <!--Agregar Fila-->
-                        <Button x:Name="Agregar"  Margin="10,24,0,0" Width="33"  Height="26">
+                        <Button x:Name="Agregar"  Click = "AgregarButton_Click" Margin="10,24,0,0" Width="33"  Height="26">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Imagenes/agregar.png" />
                             </StackPanel>

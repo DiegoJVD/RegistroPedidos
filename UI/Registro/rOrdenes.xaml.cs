@@ -18,9 +18,13 @@ namespace RegistroPedidos.UI.Registro
             orden = new Ordenes();
             this.DataContext = orden;
 
-            // ProductoComboBox.ItemsSource = ProductosBLL.GetList(p => true);
-            // ProductoComboBox.SelectedValuePath = "PrestamoId ";
-            // ProductoComboBox.DisplayMemberPath = "Concepto";
+             ProductoComboBox.ItemsSource = ProductosBLL.GetList(p => true);
+             ProductoComboBox.SelectedValuePath = "ProductoId";
+             ProductoComboBox.DisplayMemberPath = "Descripcion";
+
+             SuplidorComboBox.ItemsSource = SuplidoresBLL.GetList(p => true);
+             SuplidorComboBox.SelectedValuePath = "SuplidorId";
+              SuplidorComboBox.DisplayMemberPath = "Nombres";
         }
 
         private void Limpiar()

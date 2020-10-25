@@ -16,6 +16,12 @@ namespace RegistroPedidos.Entidades
         [ForeignKey("OrdenId")]
         public virtual List<OrdenesDetalle> Detalle { get; set; }
 
+        public Ordenes()
+        {
+            Fecha = DateTime.Now;
+            Detalle = new List<OrdenesDetalle>();
+        }
+
         
 
         

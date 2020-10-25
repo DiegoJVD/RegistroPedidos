@@ -18,6 +18,23 @@ namespace RegistroPedidos.DAL
             optionsBuilder.UseSqlite(@"Data Source=Data/BDPedidos.db");
         }
 
-        
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Productos>().HasData(new List<Productos>()
+                { 
+                    new Productos(1, "pan", 75, 0),
+                    new Productos(2, "soda", 30, 0),
+                }
+            );
+
+            modelBuilder.Entity<Suplidores>().HasData(new List<Suplidores>()
+                {
+                    new Suplidores(1, "yoma"),
+                    new Suplidores(2, "coca-cola"),
+                }
+            );
+        }
     }
 }

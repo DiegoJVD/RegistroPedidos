@@ -14,5 +14,10 @@ namespace RegistroPedidos.Entidades
         [ForeignKey("SuplidorId")]
         public virtual List<Ordenes> Prestamos { get; set; }
 
+        public Suplidores(int SuplidorId, String Nombres){
+            this.SuplidorId = SuplidorId;
+            this.Nombres = Nombres;
+        }
+
     }
 }

@@ -13,6 +13,13 @@ namespace RegistroPedidos.Entidades
         public decimal Costo { get; set; }
         public int Inventario { get; set; }
 
+        public Productos(int ProductoId, string Descripcion, decimal Costo, int Inventario){
+            this.ProductoId = ProductoId;
+            this.Descripcion = Descripcion;
+            this.Costo = Costo;
+            this.Inventario = Inventario;
+        }
+
 
 
     }
