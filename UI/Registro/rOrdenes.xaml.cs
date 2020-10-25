@@ -171,43 +171,31 @@ namespace RegistroPedidos.UI.Registro
 
         private bool ValidarDetalle()
         {
-            // if(!ValorTextBox.Text.All(char.IsNumber))
-            // {
-            //     MessageBox.Show("Ingrese un valor válido e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
-            //     return false;
-            // }
-
-            //  if( ValorTextBox.Text.Length  == 0){
-            //       MessageBox.Show("Ingrese un valor e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
-            //     return false;
-            //  }
-
-            // if(ProductoComboBox.SelectedIndex < 0)
-            // {
-            //     MessageBox.Show("Seleccione un préstamo e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
-            //     return false;
-            // }
-
-            return true;
-        }
-
-        private bool ValidarMora()
-        {
-            DateTime fecha;
-
-            if(!DateTime.TryParse(FechaDatePicker.Text, out fecha))
+            if(!CantidadTextBox.Text.All(char.IsNumber))
             {
-                MessageBox.Show("Ingrese una fecha e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ingrese un valor válido e intente de nuevo", "Registro de Pedidos", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if(!CostoTextBox.Text.All(char.IsNumber))
+            {
+                MessageBox.Show("Ingrese un valor válido e intente de nuevo", "Registro de Pedidos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
-            if(orden.Detalle.Count == 0)
+            if(ProductoComboBox.SelectedIndex < 0)
             {
-                MessageBox.Show("Ingrese  un préstamo e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Seleccione un producto e intente de nuevo", "Registro de Pedidos", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+             if(SuplidorComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione un suplidor e intente de nuevo", "Registro de Pedidos", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             return true;
         }
+
      }
 }
