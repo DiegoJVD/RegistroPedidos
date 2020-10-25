@@ -140,13 +140,14 @@ namespace RegistroPedidos.UI.Registro
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
-            // int id = Utilidades.ToInt(IdTextBox.Text);
+            int id = Utilidades.ToInt(IdTextBox.Text);
 
-            // Limpiar();
+            Limpiar();
 
-            // if (MorasBLL.Eliminar(id))
-            //     MessageBox.Show("Mora eliminada", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Information);
-            
+            if (OrdenesBLL.Eliminar(id))
+                MessageBox.Show("Orden eliminada", "Registro de Ordenes", MessageBoxButton.OK, MessageBoxImage.Information);
+             else
+                MessageBox.Show("No se pudo eliminar la orden", "Registro de Ordenes", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private bool ValidarDetalle()
