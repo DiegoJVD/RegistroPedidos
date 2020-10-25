@@ -107,55 +107,35 @@ namespace RegistroPedidos.UI.Registro
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!ValidarMora())
+            if(!ValidarOrden())
                 return;
 
             bool paso = false;
 
-            //if (string.IsNullOrWhiteSpace(IdTextBox.Text) || IdTextBox.Text == "0")
+            if (string.IsNullOrWhiteSpace(IdTextBox.Text) || IdTextBox.Text == "0")
                 paso = OrdenesBLL.Guardar(orden);
 
            
-            // else
-            // {
-            //     if(!ExisteDB())
-            //     {
-            //         MessageBox.Show("  porque no existe.", "Error al modificar ", MessageBoxButton.OK, MessageBoxImage.Error);
-            //         return;
-            //     }
+             else
+             {
+                if(!ExisteDB())
+                {
+                    MessageBox.Show("Ya existe .", "Error al modificar ", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-            //     paso = MorasBLL.Modificar(mora);
-            // }
+                paso = OrdenesBLL.Modificar(orden);
+            }
 
             if(paso)
             {
                 Limpiar();
-                MessageBox.Show("Mora guardada ", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Orden guardada ", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 MessageBox.Show("Revise los datos e intente de nuevo", "Error al Guardar", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            // if( paso){
-            // var prestamo = PrestamoBLL.Buscar(Convert.ToInt32(PrestamoComboBox.SelectedValue.ToString()));
-
-            // foreach (var item in mora.Detalle)
-            // {
-            //         MorasDetalle detalle =  new MorasDetalle(
-            //             mora.MoraId,
-            //             Convert.ToInt32(PrestamoComboBox.SelectedValue.ToString()),
-            //             Convert.ToInt32(ValorTextBox.Text) 
-            //         );
-
-            //         mora.Detalle.Add(detalle);
-            //         mora.Total += detalle.Valor;
-
-            //         prestamo.Balance += Convert.ToInt32(ValorTextBox.Text);
-            //         PrestamoBLL.Guardar(prestamo);
-            //         Actualizar();
-            // }
-            // }
         }
 
         private void EliminarButton_Click(object sender, RoutedEventArgs e)
@@ -197,5 +177,15 @@ namespace RegistroPedidos.UI.Registro
             return true;
         }
 
+        private bool ValidarOrden()
+        {
+            if(orden.Detalle.Count == 0)
+            {
+                MessageBox.Show("Ingrese  un préstamo e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            return true;
+        }
      }
 }
