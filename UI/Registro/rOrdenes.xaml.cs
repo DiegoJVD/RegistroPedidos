@@ -47,17 +47,17 @@ namespace RegistroPedidos.UI.Registro
         }
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
          {
-        //     orden anterior = MorasBLL.Buscar(Utilidades.ToInt(IdTextBox.Text));
+            Ordenes ordenes = OrdenesBLL.Buscar(Utilidades.ToInt(IdTextBox.Text));
 
-        //     if(anterior != null)
-        //     {
-        //         mora = anterior;
-        //         Actualizar();
-        //     }
-        //     else
-        //     {
-        //         MessageBox.Show("Mora no encontrada.", "Error al buscar Mora");
-        //     }
+            if(ordenes != null)
+            {
+                orden = ordenes;
+                Actualizar();
+            }
+            else
+            {
+                MessageBox.Show("Orden no encontrada.", "Error al buscar Orden");
+            }
         }
 
         private void AgregarButton_Click(object sender, RoutedEventArgs e)
@@ -72,12 +72,10 @@ namespace RegistroPedidos.UI.Registro
                 Convert.ToInt32(ProductoComboBox.SelectedValue.ToString()),
                 Utilidades.ToInt(CantidadTextBox.Text),
                 Convert.ToDecimal(CostoTextBox.Text)
-
-               // DetalleDataGrid.row
            );
 
             orden.Detalle.Add(detalle);
-            //orden.Total += detalle.Valor;
+            orden.Monto += detalle.Costo;
 
             Actualizar();
 
@@ -89,15 +87,15 @@ namespace RegistroPedidos.UI.Registro
 
         private void RemoverButton_Click(object sender, RoutedEventArgs e)
         {
-            // if(DetalleDataGrid.Items.Count > 0 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
-            // {
-            //     MorasDetalle detalle = (MorasDetalle)DetalleDataGrid.SelectedItem;
+            if(OrdenesDataGrid.Items.Count > 0 && OrdenesDataGrid.SelectedIndex <= OrdenesDataGrid.Items.Count - 1)
+            {
+                OrdenesDetalle detalle = (OrdenesDetalle)OrdenesDataGrid.SelectedItem;
 
-            //     mora.Total -= detalle.Valor;
-            //     mora.Detalle.Remove(detalle);
+                orden.Monto -= detalle.Costo;
+                orden.Detalle.Remove(detalle);
                 
-            //     Actualizar();
-            // }
+                Actualizar();
+            }
         }
 
         private void NuevoButton_Click(object sender, RoutedEventArgs e)

@@ -77,10 +77,10 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <!--Monto-->
+            <!--Total-->
             <StackPanel  Margin="350,10,0,0"   Orientation="Horizontal" Width="123" HorizontalAlignment="Left">
                 <Label Content="Total:" HorizontalAlignment="Right"  />
-                <TextBox x:Name="MontoTextBox" Height="25" Width="81" Text="{Binding Monto}" IsReadOnly="True"/>
+                <TextBox x:Name="TotalTextBox" Height="25" Width="81" Text="{Binding Monto}" IsReadOnly="True"/>
             </StackPanel>
 
             <!--botones Nuevo, guardar y eliminar -->

@@ -13,6 +13,8 @@ namespace RegistroPedidos.Entidades
         public int SuplidorId { get; set; }
         public int Inventario { get; set; }
 
+        public decimal Monto { get; set; }
+
         [ForeignKey("OrdenId")]
         public virtual List<OrdenesDetalle> Detalle { get; set; }
 

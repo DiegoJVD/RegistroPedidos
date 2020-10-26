@@ -28,6 +28,9 @@ namespace RegistroPedidos.Migrations
                     b.Property<int>("Inventario")
                         .HasColumnType("INTEGER");
 
+                    b.Property<decimal>("Monto")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("SuplidorId")
                         .HasColumnType("INTEGER");
 

@@ -43,7 +43,8 @@ namespace RegistroPedidos.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Fecha = table.Column<DateTime>(nullable: false),
                     SuplidorId = table.Column<int>(nullable: false),
-                    Inventario = table.Column<int>(nullable: false)
+                    Inventario = table.Column<int>(nullable: false),
+                    Monto = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
