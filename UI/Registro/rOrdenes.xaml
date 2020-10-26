@@ -58,7 +58,7 @@
                             </StackPanel>
                         </Button>
                         <!--Remover Fila-->
-                        <Button x:Name="Remover"  Margin="10,24,0,0"  Width="33"  Height="26">
+                        <Button x:Name="Remover"  Click = "RemoverButton_Click" Margin="10,24,0,0"  Width="33"  Height="26">
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="/Imagenes/Remover.png" />
                             </StackPanel>
@@ -69,9 +69,9 @@
                     <StackPanel  Width="458" Margin="10,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left" >
                         <DataGrid x:Name="OrdenesDataGrid" ItemsSource="{Binding Detalle}"  Height="150" Width="458" IsReadOnly="True" AutoGenerateColumns="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
-                                <DataGridTextColumn Header="Descripción" Binding="{Binding ProductoId}"/>
-                                <DataGridTextColumn Header="Costo" Binding="{Binding Costo}"/>
+                                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="*"/>
+                                <DataGridTextColumn Header="Descripción" Binding="{Binding ProductoId}" Width="*"/>
+                                <DataGridTextColumn Header="Costo" Binding="{Binding Costo}" Width="*"/>
                             </DataGrid.Columns>
                         </DataGrid>
                     </StackPanel>

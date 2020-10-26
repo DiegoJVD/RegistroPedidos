@@ -79,8 +79,6 @@ namespace RegistroPedidos.UI.Registro
 
             Actualizar();
 
-            // PrestamoComboBox.SelectedIndex = -1;
-            // ValorTextBox.Clear();
             CostoTextBox.Clear();
             CantidadTextBox.Clear();
         }
@@ -101,6 +99,7 @@ namespace RegistroPedidos.UI.Registro
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+            
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
@@ -180,7 +179,7 @@ namespace RegistroPedidos.UI.Registro
         {
             if(orden.Detalle.Count == 0)
             {
-                MessageBox.Show("Ingrese  un préstamo e intente de nuevo", "Registro de moras", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Ingrese  un préstamo e intente de nuevo", "Registro de Ordenes", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 

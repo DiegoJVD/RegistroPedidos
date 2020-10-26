@@ -20,40 +20,26 @@ namespace RegistroPedidos.UI.Consulta
             
         }
 
-        // private void BuscarButton_Click(object sender, RoutedEventArgs e)
-        // {
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
             
-        //      var listado = new List<Personas>();
+             var listado = new List<Ordenes>();
 
-        //     if (CriterioTextBox.Text.Trim().Length > 0)
-        //     {
-        //         switch (FiltroComboBox.SelectedIndex)
-        //         {
-        //             case 0: 
-        //                 listado = PersonaBLL.GetList(e => e.PersonaId == this.ToInt(CriterioTextBox.Text));
-        //                 break;
+            
+            
+                listado = OrdenesBLL.GetList(c => true);         
 
-        //             case 1:    
-        //                 listado = PersonaBLL.GetList(e => e.Nombres == this. CriterioTextBox.Text);
-        //                 break;
-        //         }
-        //     }
-        //     else
-        //     {
-        //         listado = PersonaBLL.GetList(c => true);
-        //     }          
+            DatosDataGrid.ItemsSource = null;
+            DatosDataGrid.ItemsSource = listado;
+        } 
+        public int ToInt(string valor)
+        {
+            int retorno = 0;
 
-        //     DatosDataGrid.ItemsSource = null;
-        //     DatosDataGrid.ItemsSource = listado;
-        // } 
-        // public int ToInt(string valor)
-        // {
-        //     int retorno = 0;
+            int.TryParse(valor,out retorno);
 
-        //     int.TryParse(valor,out retorno);
-
-        //     return retorno;
-        // }
+            return retorno;
+        }
 
 
 

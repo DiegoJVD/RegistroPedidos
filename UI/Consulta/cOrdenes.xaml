@@ -13,8 +13,7 @@
                 <StackPanel Margin="5,0">
                     <Label Content="Filtro:"/>
                     <ComboBox x:Name="FiltroComboBox" Width="100">
-                        <ComboBoxItem Content="Persona Id"/>
-                        <ComboBoxItem Content="Nombres"/>
+                        <ComboBoxItem Content="Todas"/>
                     </ComboBox>
                 </StackPanel>
 
@@ -22,7 +21,7 @@
                     <Label Content="Critero:"/>
                     <TextBox x:Name="CriterioTextBox"  Height="26" Width="100" />
                 </StackPanel>
-                <Button x:Name="BuscarButton" Height="27" Width="90" Margin="0,18,0,0">
+                <Button x:Name="BuscarButton" Click = "BuscarButton_Click" Height="27" Width="90" Margin="0,18,0,0">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Imagenes/Buscar.png"/>
                         <Label Content="Buscar"/>
